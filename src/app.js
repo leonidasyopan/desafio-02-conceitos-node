@@ -41,7 +41,6 @@ app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
   // Stores the input date sent by the user into distinct varibles.
   const { title, url, techs } = request.body;
-  const likes = 0;
 
   // Creates a variable that represents the position of the array in which the desired
   // repository will be changed. It uses the function findIndex to compare the id.
@@ -58,7 +57,7 @@ app.put("/repositories/:id", (request, response) => {
     title,
     url,
     techs,
-    likes
+    likes: repositories[repositoryIndex].likes,
   };
 
   // Places the new repository in the identified place the old one is located. This 
